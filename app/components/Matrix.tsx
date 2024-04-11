@@ -8,22 +8,26 @@ const Matrix = memo(function Matrix() {
   const [quadrants, setQuadrants] = useState<QuadrantProps[]>([
     {
       id: 1,
-      name: "Urgent and Important",
+      urgent: true,
+      important: true,
       position: Position.URGENT_IMPORTANT,
     },
     {
       id: 2,
-      name: "Not Urgent and Important",
+      urgent: false,
+      important: true,
       position: Position.NOT_URGENT_IMPORTANT,
     },
     {
       id: 3,
-      name: "Urgent and Not Important",
+      urgent: true,
+      important: false,
       position: Position.URGENT_NOT_IMPORTANT,
     },
     {
       id: 4,
-      name: "Not Urgent and Not Important",
+      urgent: false,
+      important: false,
       position: Position.NOT_URGENT_NOT_IMPORTANT,
     },
   ]);

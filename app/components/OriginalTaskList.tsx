@@ -3,7 +3,11 @@ import TaskItem from "@/app/components/TaskItem";
 import { useTasksStore } from "@/app/store";
 
 export const TaskList = ({ children }: { children: any }) => {
-  return <div className={"gap-2 flex flex-col"}>{children}</div>;
+  return (
+    <div className={"gap-2 flex flex-col transition-all duration-500"}>
+      {children}
+    </div>
+  );
 };
 
 const OrginalTaskList = () => {

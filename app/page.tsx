@@ -8,6 +8,7 @@ import { Position } from "@/app/constants";
 import OriginalTaskList from "@/app/components/OriginalTaskList";
 import TaskInput from "@/app/components/TaskInput";
 import { useTasksStore } from "@/app/store";
+import PrioritizedList from "@/app/components/PrioritizedList";
 
 export default function Home() {
   const tasks = useTasksStore((state) => state.tasks);
@@ -68,16 +69,24 @@ export default function Home() {
         </h1>
       </div>
 
-      <div className={"flex gap-4"}>
+      <div className={"grid grid-cols-4 gap-4"}>
         {/* This will contain the inputs and the task lists */}
-        <div className={"w-[500px]"}>
+        <div className={""}>
           <TaskInput />
           <OriginalTaskList />
         </div>
 
         {/*  This section will have the droppable quadrants */}
-        <Matrix />
+        <div className={"col-span-2"}>
+          <Matrix />
+        </div>
+
+        {/*  This section will hold the final result */}
+        <div className={""}>
+          <PrioritizedList />
+        </div>
       </div>
+
     </main>
   );
 }
